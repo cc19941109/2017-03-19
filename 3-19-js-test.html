@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js test</title>
+    <script>
+        var  arr = ['*','##',"***","&&","****","##*"];
+        arr[7] = "**";
+        var tmp = new Array(); //存储 排序后的图案;
+        for(var i in arr){
+            if(arr[i][0]=='*'){ // 判断数组第1个字符是否包含 *
+                tmp[i] = arr[i];
+            }
+        }
+        for(var i in tmp){
+           document.write(tmp[i]+"</br>");
+        }
+        tmp.sort();  //排序
+        for(var i in tmp){
+            document.write(tmp[i]+"<br/>");
+        }
+
+        var arr = [12,231,123121,312312,12312,79];
+        var compare = function (x, y) {//比较函数
+            if (x < y) {
+                return 2;
+            } else if (x > y) {
+                return -2;
+            } else {
+                return 0;
+            }
+        }
+        arr.sort(compare);
+        for(var i in arr){
+            document.write(arr[i]+"<br/>");
+        }
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
