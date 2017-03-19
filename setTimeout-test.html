@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script type="text/javascript">
+        var num=0;
+        var i ;
+        function numCount(){
+            document.getElementById('txt').value=num;
+            num=num+1;
+             i =setTimeout("numCount()",1000);
+        }
+        function stop() {
+            clearTimeout(i);
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="text" id="txt" />
+    <input type="button" value="Start" onclick="numCount()" />
+    <input type="button" value="stop" onclick="stop()"/>
+</form>
+</body>
+</html>
