@@ -1,0 +1,44 @@
+<!DOCTYPE  HTML>
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>对象</title>
+
+    <script type="text/javascript">
+        //通过javascript的日期对象来得到当前的日期，并输出。
+        var d1 = new Date;
+        var week = d1.getDay();
+        var a = ["星期天","星期一","星期二","星期三","星期四","星期五","星期六"];
+        document.write(d1.getFullYear()+"/"+d1.getMonth()+"/"+d1.getDate()+" "+a[d1.getDay()]+"<br>");
+
+        //成绩是一长窜的字符串不好处理，找规律后分割放到数组里更好操作哦
+        var scoreStr = "小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小伍:76;小迪:64;小曼:76";
+        var a = scoreStr.split(";");
+        for (var i in a){
+            document.write(a[i]+"<br>");
+        }
+        var aname = new Array();
+        var ascore = new Array();
+        for(var x=0;x<a.length;x++){
+
+            aname[x] = a[x].substr(0,2);
+        }
+        for(var i in aname){
+            document.write(aname[i]+" ");
+        }
+        for(var x=0;x<a.length;x++){
+
+            ascore[x] = a[x].substr(3,2);
+        }
+        //从数组中将成绩撮出来，然后求和取整，并输出。
+        var sum = 0;
+        for(var y = 0 ;y<ascore.length;y++){
+            sum += parseInt(ascore[y]);
+        }
+        document.write("<br>平均分为："+sum/aname.length);
+
+    </script>
+</head>
+<body>
+</body>
+</html>
